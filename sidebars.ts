@@ -22,23 +22,42 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Getting Started',
+      link: { type: 'doc', id: 'getting-started/index' },
       items: [
         'getting-started/setting-up-user-account',
-        'getting-started/managing-user-tokens',
+        'getting-started/managing-api-tokens',
+        'getting-started/publishing-a-module',
         'getting-started/managing-subscription'
       ],
     },
     {
       type: 'category',
-      label: 'Tutorials',
+      label: 'Module',
+      link: { type: 'doc', id: 'module/index' },
       items: [
-        'tutorials/publishing-a-package',
+        'module/publication',
+        'module/usage',
+      ],
+    },
+    'subscriptions',
+    {
+      type: 'category',
+      label: 'CLI',
+      link: { type: 'doc', id: 'cli/index' },
+      items: [
+        'cli/login',
+        'cli/logout',
+        'cli/module/list',
+        'cli/module/publish'
       ],
     },
     {
       type: 'category',
       label: 'CI Integrations',
-      items: ['ci/github-actions'],
+      link: { type: 'doc', id: 'ci/index' },
+      items: [
+        'ci/github-actions'
+      ],
     },
   ]
 };
