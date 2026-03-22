@@ -18,6 +18,7 @@
   --ifm-navbar-background-color: rgba(249, 250, 251, 0.94);
   --ifm-footer-background-color: #111827;
   --ifm-link-color: #1f2937;
+  --ifm-link-hover-color: #111827;
   --ifm-font-family-base: 'Geist', 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
   --ifm-heading-font-family: 'Geist', 'Satoshi', 'Avenir Next', 'Segoe UI', sans-serif;
   --ifm-font-weight-semibold: 600;
@@ -44,6 +45,8 @@
   --ifm-font-color-base: #e5e7eb;
   --ifm-heading-color: #f9fafb;
   --ifm-toc-border-color: #1f2937;
+  --ifm-link-color: #f8fafc;
+  --ifm-link-hover-color: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 }
 
@@ -74,6 +77,61 @@ html[data-theme='light'] .navbar {
   outline-offset: 2px;
 }
 
+[data-theme='dark'] .button.button--secondary {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #f9fafb;
+}
+
+[data-theme='dark'] .button.button--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #ffffff;
+}
+
+[data-theme='dark'] .button.button--secondary:focus-visible {
+  outline: 2px solid #f8fafc;
+  outline-offset: 2px;
+}
+
 main {
   line-height: var(--ifm-leading);
+}
+
+[data-theme='dark'] a {
+  color: var(--ifm-link-color);
+}
+
+[data-theme='dark'] a:hover {
+  color: var(--ifm-link-hover-color);
+}
+
+[data-theme='dark'] a:focus-visible {
+  outline: 2px solid #f8fafc;
+  outline-offset: 2px;
+}
+
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .menu__link,
+[data-theme='dark'] .table-of-contents__link,
+[data-theme='dark'] .footer__link-item,
+[data-theme='dark'] .pagination-nav__link,
+[data-theme='dark'] .breadcrumbs__link {
+  color: #f3f4f6;
+}
+
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .menu__link:hover,
+[data-theme='dark'] .table-of-contents__link:hover,
+[data-theme='dark'] .footer__link-item:hover,
+[data-theme='dark'] .pagination-nav__link:hover,
+[data-theme='dark'] .breadcrumbs__link:hover {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .menu__link--active,
+[data-theme='dark'] .table-of-contents__link--active,
+[data-theme='dark'] .navbar__link--active,
+[data-theme='dark'] .breadcrumbs__link[href][aria-current='page'] {
+  color: #ffffff;
 }

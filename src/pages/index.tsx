@@ -26,7 +26,7 @@ function HomepageHeader() {
             Read Documentation
           </Link>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--primary button--lg"
             to="/docs/getting-started/">
             Quick Start Guide
           </Link>
