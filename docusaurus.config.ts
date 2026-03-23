@@ -59,7 +59,7 @@ const config: Config = {
       '@docusaurus/plugin-vercel-analytics',
       {
         debug: false,
-        mode: 'production',
+        mode: 'auto',
       },
     ],
   ],
