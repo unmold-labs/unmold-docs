@@ -9,7 +9,7 @@ Make sure you have:
 * Installed the Unmold CLI
 * Authenticated using your API token
 
-See [CLI setup and authentication](../cli/index) if you haven’t completed this step.
+See [CLI setup and authentication](../cli/) if you haven’t completed this step.
 
 ## Step 1 — Publish the Module
 
