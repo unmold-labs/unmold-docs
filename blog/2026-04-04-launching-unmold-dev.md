@@ -32,7 +32,7 @@ We’ve found that existing solutions can feel restrictive when trying to automa
 * **Free**: one private module, unlimited versions
 * **Pro**: higher limits and additional lifecycle features
 
-For more details, see the [Subscriptions](../docs/subscriptions.md) page.
+For more details, see the [Subscriptions](/docs/subscriptions) page.
 
 ---
 
