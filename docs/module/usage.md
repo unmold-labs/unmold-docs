@@ -1,4 +1,4 @@
-# Module Usage
+# Usage
 
 This page explains how to authenticate and use modules from the Unmold registry in OpenTofu and Terraform.
 
@@ -61,6 +61,8 @@ module "example" {
 }
 ```
 
+This approach **only** supports semver versions.
+
 Example:
 
 ```id="p7x2ds"
@@ -79,6 +81,8 @@ module "example" {
   source = "https://registry.unmold.dev/modules/v1/<namespace>/<name>/<system>/<version>/package.zip"
 }
 ```
+
+This approach supports semver versions and arbitrary version names.
 
 Example:
 

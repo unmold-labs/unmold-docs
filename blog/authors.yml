@@ -1,11 +1,10 @@
-unmold:
-  name: Unmold Developer
+unmold-developer-team:
+  name: Unmold Developer Team
   # title: Unmold
   url: https://unmold.dev
   # image_url: https://github.com/yangshun.png
   # page: true
   # socials:
-  #   x: yangshunz
-  #   linkedin: yangshun
-  #   github: yangshun
+  #   linkedin: https://www.linkedin.com/in/haoliangyu/
+  #   github: haoliangyu
   #   newsletter: https://www.greatfrontend.com

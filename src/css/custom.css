@@ -23,6 +23,7 @@
   --ifm-heading-font-family: 'Geist', 'Satoshi', 'Avenir Next', 'Segoe UI', sans-serif;
   --ifm-font-weight-semibold: 600;
   --ifm-leading: 1.72;
+  --ifm-paragraph-margin-bottom: 1.2rem;
   --ifm-code-font-size: 95%;
   --ifm-heading-color: #111827;
   --ifm-toc-border-color: #e5e7eb;
@@ -96,6 +97,26 @@ html[data-theme='light'] .navbar {
 
 main {
   line-height: var(--ifm-leading);
+}
+
+.markdown p {
+  margin-bottom: 1.2rem;
+}
+
+.markdown h1 {
+  margin-bottom: 1.2rem;
+}
+
+.markdown h2 {
+  margin-bottom: 1.2rem;
+}
+
+.markdown h3 {
+  margin-bottom: 1.2rem;
+}
+
+.markdown p:last-child {
+  margin-bottom: 0;
 }
 
 [data-theme='dark'] a {

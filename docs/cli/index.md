@@ -6,6 +6,14 @@ A command line tool to interact with Unmold registry programmatically.
 
 To communicate with the registry, the CLI must authenticate using the environment variable `UNMOLD_API_TOKEN` or using the [login](./login) command.
 
+## Installation
+
+The CLI is available from [npm](https://www.npmjs.com/package/@unmold/cli).
+
+```bash
+npm install -g @unmold/cli
+```
+
 ## Docker Image
 
 The CLI is also available with docker image

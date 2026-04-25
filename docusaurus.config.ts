@@ -46,7 +46,11 @@ const config: Config = {
           editUrl:
             'https://github.com/unmold-cloud/unmold-docs/tree/main/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          editUrl:
+            'https://github.com/unmold-cloud/unmold-docs/tree/main/',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -73,6 +77,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {to: '/blog', label: 'Blog', position: 'left'},
         {href: 'https://unmold.dev', label: 'Unmold', position: 'right'},
       ],
     },
