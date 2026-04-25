@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Publish module to Unmold
-        uses: unmold-cloud/publish-module-action@v1
+        uses: unmold-cloud/publish-module-action@v0
         with:
           unmold-api-token: ${{ secrets.UNMOLD_API_TOKEN }}
           name: vpc
