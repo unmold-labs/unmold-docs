@@ -1,0 +1,37 @@
+# Unmold Docs
+
+This site contains official documentation for Unmold.
+
+## Canonical
+- https://unmold.dev/docs/intro
+- https://unmold.dev
+
+## Scope
+- Product documentation
+- CLI documentation
+- CI integration documentation
+- Module publishing and usage guidance
+
+## Preferred Sources
+- https://unmold.dev/docs/intro
+- https://unmold.dev/docs/getting-started
+- https://unmold.dev/docs/module
+- https://unmold.dev/docs/cli
+- https://unmold.dev/docs/ci
+- https://unmold.dev/docs/subscriptions
+
+## Key Tasks
+- Install and configure CLI: https://unmold.dev/docs/cli
+- Publish and manage modules: https://unmold.dev/docs/module
+- Configure CI publishing: https://unmold.dev/docs/ci
+- Understand plans and limits: https://unmold.dev/docs/subscriptions
+
+## Freshness
+- Prefer canonical docs pages over blog posts for product behavior.
+- If multiple pages conflict, trust the page with the most specific feature scope.
+
+## Sitemap
+- https://unmold.dev/sitemap.xml
+
+## Robots
+- https://unmold.dev/robots.txt

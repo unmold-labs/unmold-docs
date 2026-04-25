@@ -51,6 +51,11 @@ const config: Config = {
           editUrl:
             'https://github.com/unmold-cloud/unmold-docs/tree/main/',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },

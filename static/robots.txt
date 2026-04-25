@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /search
+
+Sitemap: https://unmold.dev/sitemap.xml
+Host: https://unmold.dev
