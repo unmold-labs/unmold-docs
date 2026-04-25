@@ -63,16 +63,6 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-vercel-analytics',
-      {
-        debug: false,
-        mode: 'production',
-      },
-    ],
-  ],
-
   themeConfig: {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
