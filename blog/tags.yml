@@ -2,3 +2,7 @@ product:
   label: Product
   permalink: /product
   description: Product Updates
+weekly:
+  label: Weekly
+  permalink: /weekly
+  description: Weekly Updates
