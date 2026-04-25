@@ -1,0 +1,51 @@
+name: Search Reindex
+
+on:
+  schedule:
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: unmold-docs-search-reindex
+  cancel-in-progress: false
+
+env:
+  SITE_URL: https://unmold.dev
+  SITEMAP_URL: https://unmold.dev/sitemap.xml
+
+jobs:
+  reindex:
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Authenticate to Google Search Console
+      #   id: google-auth
+      #   uses: google-github-actions/auth@v2
+      #   with:
+      #     credentials_json: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CREDENTIALS }}
+      #     token_format: access_token
+      #     access_token_scopes: https://www.googleapis.com/auth/webmasters
+
+      # - name: Submit sitemap to Google Search Console
+      #   env:
+      #     GOOGLE_ACCESS_TOKEN: ${{ steps.google-auth.outputs.access_token }}
+      #   run: |
+      #     site_url_encoded="$(node -p "encodeURIComponent(process.env.SITE_URL)")"
+      #     sitemap_url_encoded="$(node -p "encodeURIComponent(process.env.SITEMAP_URL)")"
+
+      #     curl --fail --silent --show-error \
+      #       -X PUT \
+      #       -H "Authorization: Bearer ${GOOGLE_ACCESS_TOKEN}" \
+      #       "https://www.googleapis.com/webmasters/v3/sites/${site_url_encoded}/sitemaps/${sitemap_url_encoded}"
+
+      - name: Submit sitemap to Bing Webmaster
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: |
+          site_url_encoded="$(node -p "encodeURIComponent(process.env.SITE_URL)")"
+          sitemap_url_encoded="$(node -p "encodeURIComponent(process.env.SITEMAP_URL)")"
+
+          curl --fail --silent --show-error \
+            "https://ssl.bing.com/webmaster/api.svc/json/SubmitSiteMap?apikey=${BING_WEBMASTER_API_KEY}&siteUrl=${site_url_encoded}&siteMap=${sitemap_url_encoded}"
