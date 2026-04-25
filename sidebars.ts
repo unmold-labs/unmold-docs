@@ -56,7 +56,10 @@ const sidebars: SidebarsConfig = {
       label: 'CI Integrations',
       link: { type: 'doc', id: 'ci/index' },
       items: [
-        'ci/github-actions'
+        'ci/github-actions',
+        'ci/bitbucket',
+        'ci/gitlab',
+        'ci/jenkins'
       ],
     },
   ]
