@@ -1,41 +1,63 @@
-# Website
+# Unmold Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This repository contains the public, customer-facing documentation site for [unmold.dev](https://unmold.dev), built with [Docusaurus](https://docusaurus.io/).
 
-## Installation
+## What is in this repository
+
+- Product and feature documentation for users of Unmold.
+- Public docs pages under `docs/`.
+- Blog posts under `blog/`.
+
+## Local development
+
+### Requirements
+
+- Node.js 20 or later
+- npm
+
+### Install dependencies
 
 ```bash
-yarn
+npm install
 ```
 
-## Local Development
+### Start local docs site
 
 ```bash
-yarn start
+npm run start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This starts a local development server with hot reload.
 
-## Build
+### Create a production build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This generates static output in `build/`.
 
 ## Deployment
 
-Using SSH:
+Deployment is handled by GitHub Actions through [`.github/workflows/publish.yml`](.github/workflows/publish.yml).
 
-```bash
-USE_SSH=true yarn deploy
-```
+- Push to `main` to trigger publish.
+- You can also run the workflow manually from the Actions tab.
 
-Not using SSH:
+## Contributing
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+Contributions are welcome. Keep changes focused, accurate, and easy for customers to follow.
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+### Quick guidelines
+
+- Use clear, direct language and avoid internal-only context.
+- Keep examples copy-paste friendly.
+- Update related pages when behavior changes.
+- Run `npm run build` before opening a pull request.
+
+### Typical content locations
+
+- Product docs: `docs/`
+- Blog posts: `blog/`
+- Static assets: `static/`
+
