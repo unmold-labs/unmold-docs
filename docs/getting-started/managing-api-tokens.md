@@ -10,9 +10,20 @@ API tokens are used to authenticate with Unmold from the CLI and CI/CD systems.
 4. Enter:
    * **Name** (required)
    * **Description** (optional)
+   * **Expiration Date** (required, defaults to 90 days from creation)
 5. Click **Create**
 
 A token will be generated and displayed **only once**. Copy and store it securely.
+
+## Token Status and Expiration
+
+In **Settings -> API Tokens**, each token now shows:
+
+* **Created Date**
+* **Last Used** (shows `Never` until the token is used)
+* **Expiration**
+
+If a token is already expired, it is marked with a red **Expired** label.
 
 ## Store Tokens Securely
 
