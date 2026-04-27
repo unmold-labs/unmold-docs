@@ -13,3 +13,7 @@ When you update the documentation, please also use updates and documentations fr
 ## Project Purpose
 
 This repository contains the full documentation for [Unmold](https://unmold.dev), including product tutorial, technical documentation, and production description.
+
+## Writing Requirements
+
+* Do not assume reader's knowledge and avoid using abbreviations.

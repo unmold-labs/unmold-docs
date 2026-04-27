@@ -1,7 +1,7 @@
 ---
 title: "Unmold Weekly #1: New CI Documentation"
 description: "This post introduces the new CI documentation pages for publishing modules to Unmold from common CI platforms."
-slug: "new-ci-documentation"
+slug: "unmold-weekly-1"
 authors: [unmold-developer-team]
 tags: [product, weekly]
 ---
