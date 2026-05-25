@@ -1,3 +1,5 @@
+# Publication
+
 This section describes the module publication workflow in Unmold.
 
 When a module is published via the CLI, Unmold packages the source code, uploads it to the registry, and creates an immutable, versioned artifact consumable by OpenTofu.

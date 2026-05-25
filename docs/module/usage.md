@@ -48,7 +48,7 @@ This allows tools like OpenTofu and Terraform to authenticate automatically. See
 
 ## Using Modules
 
-Unmold supports two ways to reference modules.
+Unmold supports three source formats, with different behavior depending on the tool and version format.
 
 ### Registry Source (Recommended)
 
@@ -72,6 +72,26 @@ module "network" {
 }
 ```
 
+### OCI Source (OpenTofu)
+
+OpenTofu also supports pulling modules from OCI:
+
+```id="o1c2i3"
+module "example" {
+  source  = "oci://oci.unmold.dev/<namespace>/<name>/<system>?tag=<version>"
+}
+```
+
+This works with semver and non-semver version names in OpenTofu.
+
+Example:
+
+```id="o4c5i6"
+module "network" {
+  source  = "oci://oci.unmold.dev/team-infra/vpc/aws?tag=dev-main"
+}
+```
+
 ### HTTP Source
 
 You can also download modules directly via HTTP:
@@ -82,7 +102,7 @@ module "example" {
 }
 ```
 
-This approach supports semver versions and arbitrary version names.
+This approach supports semver versions and non-semver version names.
 
 Example:
 
@@ -94,8 +114,22 @@ module "network" {
 
 ## Choosing a Source
 
-* Use **registry source** for standard OpenTofu/Terraform workflows
-* Use **HTTP source** for custom tooling or direct downloads
+### OpenTofu
+
+* Semver version: use **registry source** or **OCI source**
+* Non-semver version: use **OCI source**
+
+### Terraform
+
+* Semver version: use **registry source**
+* Non-semver version: use **HTTP source**
+
+### Quick Matrix
+
+| Tool | Semver Version | Non-semver Version |
+| --- | --- | --- |
+| OpenTofu | Registry or OCI | OCI |
+| Terraform | Registry | HTTP |
 
 ## Related Topics
 
