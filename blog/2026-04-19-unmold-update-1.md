@@ -1,9 +1,9 @@
 ---
-title: "Unmold Weekly #1: New CI Documentation"
+title: "Unmold Update #1: New CI Documentation"
 description: "This post introduces the new CI documentation pages for publishing modules to Unmold from common CI platforms."
-slug: "unmold-weekly-1"
+slug: "unmold-update-1"
 authors: [unmold-developer-team]
-tags: [product, weekly]
+tags: [product]
 ---
 
 We have added a new CI documentation section to make it easier to publish Terraform and OpenTofu modules to Unmold from the CI systems teams already use.

@@ -1,9 +1,9 @@
 ---
-title: "Unmold Weekly #2: Token Usage and Expiration"
+title: "Unmold Update #2: Token Usage and Expiration"
 description: "This post introduces the new feature to support showing a user token's last use time and setting expiration date."
-slug: "unmold-weekly-2"
+slug: "unmold-update-2"
 authors: [unmold-developer-team]
-tags: [product, weekly]
+tags: [product]
 ---
 
 This week we added better lifecycle visibility and control for user tokens in Unmold.
