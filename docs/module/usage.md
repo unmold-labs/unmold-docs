@@ -2,7 +2,7 @@
 
 This page explains how to use modules from the Unmold registry in OpenTofu and Terraform, including authentication for each source type.
 
-## Using Modules
+## Sources
 
 Unmold supports three source formats. Each source type has its own authentication approach and use cases.
 
