@@ -1,14 +1,29 @@
 # Usage
 
-This page explains how to authenticate and use modules from the Unmold registry in OpenTofu and Terraform.
+This page explains how to use modules from the Unmold registry in OpenTofu and Terraform, including authentication for each source type.
 
-## Authentication
+## Using Modules
 
-To access private modules, you must authenticate with the registry.
+Unmold supports three source formats. Each source type has its own authentication approach and use cases.
 
-### Recommended: CLI Login
+### Registry Source (Recommended)
 
-Use the built-in login command:
+Use the registry source format:
+
+```id="m3k9cx"
+module "example" {
+  source  = "registry.unmold.dev/<namespace>/<name>/<system>"
+  version = "<version>"
+}
+```
+
+This approach **only** supports semver versions.
+
+#### Authentication
+
+Use one of the following approaches for private modules.
+
+Recommended: CLI login
 
 ```id="k91s2a"
 tofu login registry.unmold.dev
@@ -24,52 +39,10 @@ This command:
 * Stores it securely in the OpenTofu/Terraform credentials store
 * Enables seamless access to private modules
 
-### Alternative: Environment Variable
-
-You can provide the API token via environment variable:
+Alternative: environment variable (common in CI/CD)
 
 ```id="d8s1pz"
 export TF_TOKEN_registry_unmold_dev=<your_api_token>
-```
-
-This is commonly used in CI/CD environments.
-
-### Alternative: .netrc File
-
-For HTTP-based access, you need to configure a `.netrc` file at the HOME directory:
-
-```
-machine registry.unmold.dev
-login <your_email>
-password <your_api_token>
-```
-
-This allows tools like OpenTofu and Terraform to authenticate automatically. See [documentation](https://opentofu.org/docs/language/modules/sources/#http-urls) for details.
-
-## Using Modules
-
-Unmold supports three source formats, with different behavior depending on the tool and version format.
-
-### Registry Source (Recommended)
-
-Use the registry source format:
-
-```id="m3k9cx"
-module "example" {
-  source  = "registry.unmold.dev/<namespace>/<name>/<system>"
-  version = "<version>"
-}
-```
-
-This approach **only** supports semver versions.
-
-Example:
-
-```id="p7x2ds"
-module "network" {
-  source  = "registry.unmold.dev/team-infra/vpc/aws"
-  version = "1.2.0"
-}
 ```
 
 ### OCI Source (OpenTofu)
@@ -84,11 +57,28 @@ module "example" {
 
 This works with semver and non-semver version names in OpenTofu.
 
-Example:
+#### Authentication
 
-```id="o4c5i6"
-module "network" {
-  source  = "oci://oci.unmold.dev/team-infra/vpc/aws?tag=dev-main"
+If you use an OCI module source (`oci://oci.unmold.dev/...`), OpenTofu reads credentials from OCI credential sources such as Docker login and OpenTofu CLI configuration.
+
+You can authenticate in two ways.
+
+1. Docker login (recommended):
+
+```bash
+echo "<your_api_token>" | docker login oci.unmold.dev --username <your_email> --password-stdin
+```
+
+After this, OpenTofu can pull private OCI modules from `oci.unmold.dev`.
+
+2. Explicit credentials configuration (`oci_credentials`):
+
+Add an `oci_credentials` block in your OpenTofu CLI config file (for example `~/.tofurc`):
+
+```hcl
+oci_credentials "oci.unmold.dev" {
+  username = "<your_email>"
+  password = "<your_api_token>"
 }
 ```
 
@@ -103,6 +93,18 @@ module "example" {
 ```
 
 This approach supports semver versions and non-semver version names.
+
+#### Authentication
+
+For HTTP-based access, configure a `.netrc` file at the HOME directory or a path specified with the `NETRC` environment variable:
+
+```
+machine registry.unmold.dev
+login <your_email>
+password <your_api_token>
+```
+
+This allows tools like OpenTofu and Terraform to authenticate automatically. See [documentation](https://opentofu.org/docs/language/modules/sources/#http-urls) for details.
 
 Example:
 
