@@ -20,6 +20,10 @@ Publishing a module consists of the following steps:
 3. **Create version metadata**
    An immutable version entry is created and stored in the registry.
 
+   Each version has an access setting:
+   - `private` by default
+   - `public` when explicitly requested during publish
+
 4. **Process documentation**
    If a `README` file is present, it is extracted and rendered as module documentation in the console.
 
@@ -53,6 +57,25 @@ unmold module publish <module-name> <version> --overwrite
 This flag is also supported in CI integrations.
 
 > **Warning:** Overwriting replaces the existing artifact in the registry and is irreversible.
+
+---
+
+## Access Control
+
+You can set access at publish time:
+
+```
+unmold module publish <module-name> <version> --access public
+```
+
+If omitted, Unmold publishes the version as `private`.
+
+You can also update access later for a specific version:
+
+```
+unmold module make-public <module-name> <version>
+unmold module make-private <module-name> <version>
+```
 
 ---
 

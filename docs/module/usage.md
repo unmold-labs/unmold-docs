@@ -2,6 +2,15 @@
 
 This page explains how to use modules from the Unmold registry in OpenTofu and Terraform, including authentication for each source type.
 
+## Access Model
+
+Module versions in Unmold have per-version visibility:
+
+- `private` (default): requires authentication to read
+- `public`: can be listed and downloaded without authentication
+
+When authentication is present, you can access your private modules and public modules.
+
 ## Sources
 
 Unmold supports three source formats. Each source type has its own authentication approach and use cases.
@@ -22,6 +31,8 @@ This approach **only** supports semver versions.
 #### Authentication
 
 Use one of the following approaches for private modules.
+
+For public modules, authentication is optional.
 
 Recommended: CLI login
 
@@ -60,6 +71,8 @@ This works with semver and non-semver version names in OpenTofu.
 #### Authentication
 
 If you use an OCI module source (`oci://oci.unmold.dev/...`), OpenTofu reads credentials from OCI credential sources such as Docker login and OpenTofu CLI configuration.
+
+For public module versions, authentication is optional.
 
 You can authenticate in two ways.
 
@@ -105,6 +118,8 @@ password <your_api_token>
 ```
 
 This allows tools like OpenTofu and Terraform to authenticate automatically. See [documentation](https://opentofu.org/docs/language/modules/sources/#http-urls) for details.
+
+For public module versions, you can also use the URL without credentials.
 
 Example:
 

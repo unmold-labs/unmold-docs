@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'module/index' },
       items: [
         'module/publication',
+        'module/access',
         'module/usage',
       ],
     },
@@ -48,6 +49,8 @@ const sidebars: SidebarsConfig = {
         'cli/login',
         'cli/logout',
         'cli/module/list',
+        'cli/module/make-public',
+        'cli/module/make-private',
         'cli/module/publish'
       ],
     },

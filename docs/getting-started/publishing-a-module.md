@@ -23,6 +23,12 @@ Replace `<module-name>` with your module name.
 
 During publishing, Unmold packages your directory and uploads it as a versioned module.
 
+By default, the published version is private. To publish it as public:
+
+```
+unmold module publish <module-name> 1.0.0 --system aws --access public
+```
+
 ## Step 2 — Verify the Publish
 
 After the command succeeds, your module will be available:
@@ -51,8 +57,11 @@ Run `tofu init` to download the module.
 
 * Your module was packaged and versioned
 * A new immutable version (`1.0.0`) was created
+* The version access was set to `private` by default (or `public` if requested)
 * The module is now available for reuse across environments
 
 ## Next Step
 
-Continue to [Manage subscriptions](./managing-subscription) to understand usage limits and plan constraints.
+Continue to [Module access](../module/access) to learn how to make versions public or private.
+
+Then review [Manage subscriptions](./managing-subscription) to understand usage limits and plan constraints.

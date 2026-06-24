@@ -22,6 +22,7 @@ The final artifact identity is:
 - `-s, --system <system>`: target system (default: `generic`)
 - `-p, --path <path>`: path to module directory (default: `.`)
 - `-o, --overwrite`: overwrite existing version
+- `-a, --access <private|public>`: access level for the published version (default: `private`)
 - `-c, --confirm`: skip prompt confirmation
 
 ## Examples
@@ -30,6 +31,7 @@ The final artifact identity is:
 unmold module publish mymodule 1.0.0
 unmold module publish mymodule 1.0.0 --path ./module-dir
 unmold module publish mymodule 1.0.0 --system aws
+unmold module publish mymodule 1.0.0 --access public
 unmold module publish mymodule 70e21a8fb88d6d5f76f18a1516425037caff2a20
 ```
 
@@ -37,3 +39,4 @@ unmold module publish mymodule 70e21a8fb88d6d5f76f18a1516425037caff2a20
 
 - The command zips directory contents before upload.
 - `.gitignore` entries and `.git` are excluded from the archive.
+- Published versions are private by default unless `--access public` is explicitly provided.

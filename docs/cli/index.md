@@ -4,7 +4,12 @@ import DocCardList from '@theme/DocCardList';
 
 A command line tool to interact with Unmold registry programmatically.
 
-To communicate with the registry, the CLI must authenticate using the environment variable `UNMOLD_API_TOKEN` or using the [login](./login) command.
+The CLI can be used in both authenticated and unauthenticated modes.
+
+- Authenticated mode: required for publishing, deleting, and changing module access.
+- Unauthenticated mode: supported for listing and consuming public modules.
+
+Authenticate using the environment variable `UNMOLD_API_TOKEN` or the [login](./login) command when you need private module operations.
 
 ## Installation
 
